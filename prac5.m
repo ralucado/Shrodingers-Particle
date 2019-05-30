@@ -12,19 +12,18 @@ else
 end
 
 
-n = inputdlg('Insert "n" value:');
-n = str2double(n{1});
-%a = input('Insert "a" value:\n');
-X = inputdlg('Insert specific x value between -a/2 and a/2:');
-X = str2double(X{1});
-
-
-
 prompt = {'Enter "a" value (in m):'};
 dlgtitle = 'a';
 definput = {'100e-12'};
 A = inputdlg(prompt,dlgtitle,[1 40],definput);
 a = str2double(A{1:1});
+
+n = inputdlg('Insert "n" value:');
+n = str2double(n{1});
+
+X = inputdlg('Insert specific x value between -a/2 and a/2:');
+X = str2double(X{1});
+
 
 global h;
 h = 6.625*10^-34;
