@@ -1,16 +1,34 @@
 format short g
-n = input('Insert "n" value:\n');
+list = {'Electron','Neutron','Proton','Hydrogen','Neon','Other'};
+[indx,tf] = listdlg('PromptString','Select a mass:',...
+                           'SelectionMode','single',...
+                           'ListString',list);
+masses = {9.11*10^-34, 1.674929*10^-30, 3.47053*10^-30, 1.6735575*10^-30, 3.350920307*10^-25};
+if indx == 6
+    m = inputdlg('Insert "m" value (in g):');
+    m = str2double(m{1});
+else
+    m = masses{indx};
+end
+
+
+n = inputdlg('Insert "n" value:');
+n = str2double(n{1});
 %a = input('Insert "a" value:\n');
-%m = input('Insert "m" value:\n');
-X = input('Insert specific x value between -a/2 and a/2:');
-me = 9.11*10^-34;
-mn = 1.674929*10^-27;
-mp = 3.47053*10^-25;
-a = 100*10^-12;
+X = inputdlg('Insert specific x value between -a/2 and a/2:');
+X = str2double(X{1});
+
+
+
+prompt = {'Enter "a" value (in m):'};
+dlgtitle = 'a';
+definput = {'100e-12'};
+A = inputdlg(prompt,dlgtitle,[1 40],definput);
+a = str2double(A{1:1});
+
 global h;
 h = 6.625*10^-34;
 
-m=me;
 
 fig = figure();
 subplot(4, 2, [1 3]);
