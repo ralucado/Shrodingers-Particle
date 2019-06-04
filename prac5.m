@@ -28,7 +28,7 @@ prompt = {'Insert specific x value between -a/2 and a/2:'};
 dlgtitle = 'X';
 definput = {'0'};
 x = inputdlg(prompt,dlgtitle,[1 40],definput);
-x = str2double(x{1:1});
+X = str2double(x{1:1});
 
 
 global h;
